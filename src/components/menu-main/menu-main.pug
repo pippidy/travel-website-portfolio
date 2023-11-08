@@ -1,0 +1,28 @@
+-
+    const main_menu = [
+        {id: 'index', name: 'Home', url: 'index.html', submenu: false},
+        {id: 'about', name: 'About', url: 'about.html', submenu: false},
+        {id: 'services', name: 'Services', url: null, submenu: true, submenu_list: [
+            {id: 'honey_pack', name: 'Honeymoon Packages', url: '#0'},
+            {id: 'tours_pack', name: 'Tours Packages', url: '#0'},
+            {id: 'musical', name: 'Musical Events', url: '#0'},
+            {id: 'build_pack', name: 'Build Package', url: '#0'}
+        ]},
+        {id: 'upcoming', name: 'Upcoming Packages', url: 'upcoming.html', submenu: false}
+    ];
+
+mixin subMenu(subItems)
+    .main-menu__sub-holder
+        ul.main-menu__sub
+            each item in subItems
+                li
+                    a(href=item.url).main-menu__sub-item= item.name
+
+mixin mainMenu()
+    each item in main_menu
+        li
+            if (item.submenu)
+                span.main-menu__sub-title= item.name
+                +subMenu(item.submenu_list)
+            else
+                a(href=item.url, class=(item.id === page ? "main-menu__item_current" : '')).main-menu__item= item.name

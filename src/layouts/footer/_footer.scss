@@ -1,0 +1,128 @@
+$letter-spacing: -.32;
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-inline: 40px;
+    padding-block: 120px 40px;
+    margin-top: auto;
+    font-family: $font-family-tertiary;
+    color: #181E4B;
+    background: url('img/mountains.png') no-repeat right bottom;
+    background-size: 577px;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: min(200px, 100%) max-content max-content min(389px, 100%);
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 60px;
+        border-bottom: 2px solid #E5E5EA;
+    }
+
+    &__subtitle {
+        margin-bottom: 25px;
+        font-size: 2.1rem;
+    }
+
+    &__logo-holder {
+        position: relative;
+        top: -20px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    & .logo-main {
+        font-size: 3.16rem;
+        color: #181E4B;
+    }
+
+    &__logo-text {
+        color: #757095;
+        line-height: 175%;
+        letter-spacing: $letter-spacing;
+    }
+
+    &__nav {
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+    }
+
+    &__copyright {
+        text-align: center;
+        letter-spacing: $letter-spacing;
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.newsletter {
+    justify-self: end;
+
+    &__form {
+        position: relative;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1.1em 1.5em;
+        padding-right: 160px;
+        margin-bottom: 20px;
+        background-color: #eef;
+        border: 0;
+
+        &::placeholder {
+            font-family: $font-family-tertiary;
+            color: #181433;
+            letter-spacing: $letter-spacing;
+            opacity: .2;
+        }
+    }
+
+    & .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-block: .99em;
+        padding-inline: 2.5em 1.875em;
+        font-family: $font-family-tertiary;
+        font-size: 1.6rem;
+    }
+
+    &__label {
+        line-height: 162.5%;
+        letter-spacing: $letter-spacing;
+        opacity: .5;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        &__inner {
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 40px;
+        }
+
+        &__nav {
+            justify-self: center;
+        }
+    }
+
+    .newsletter {
+        grid-column: 1 / -1;
+        justify-self: center;
+
+        &__form {
+            max-width: 389px;
+        }
+    }
+}

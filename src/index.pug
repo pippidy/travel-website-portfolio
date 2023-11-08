@@ -1,0 +1,134 @@
+extends layouts/default
+
+block variables
+  - var page = 'index';
+  - var title = "Travel & Tour Booking Website";
+
+block content
+  main.content
+    include components/partners/partners
+
+    //- SERVICES section
+    section.section.services
+      .section__name.text-center Category
+      h2.section__title.text-center We offer best services
+      include components/services/services
+
+    //- ROMANTIC section
+    section.section.romantic
+      img(src="img/romantic.png", alt="Photo of a young couple").romantic__img
+      article.romantic__article
+        .section__name Honeymoon specials
+        h2.section__title Our romantic tropical destinations
+        p.romantic__text.
+          Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.
+          Non quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!
+        button(type="button").btn.btn_default View packages
+
+    //- RESORT section
+    -
+      const resort_list = [
+        {icon: 'i01', title: 'Choose destination', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.'},
+        {icon: 'i02', title: 'Check availability', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.'},
+        {icon: 'i03', title: 'Let’s go', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.'}
+      ];
+
+    section.section.resort
+      article.resort__article
+        .section__name Fast & Easy
+        h2.section__title Get your favourite resort bookings
+
+        ul.resort__list
+          each item in resort_list
+            li.resort__list-item
+              .resort__icon(class = 'icon_' + item.icon)
+              .resort__text-holder
+                h3.resort__subtitle= item.title
+                p.resort__text= item.text
+
+      img(src="img/resort.png", alt="Interface screenshot")
+
+    //- AMAZING section
+    section.section.amazing
+      h2.section__title.title-decor_01 Let’s make your next holiday amazing
+
+    //- SIGHTSEEING  section
+    -
+      const sight_list = [
+        {src: 'sight_01.png', price: 700 },
+        {src: 'sight_02.png', price: 800 },
+        {src: 'sight_03.png', price: 500 },
+        {src: 'sight_04.png', price: 400 }
+      ];
+
+    section.section.sight
+      article.sight__article
+        .section__name Promotion
+        h2.section__title We provide you best Europe sightseeing tours
+        p.sight__text.
+          Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.
+          Non quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!
+        button(type="button").btn.btn_default View packages
+
+      ul.sight__list
+        each item in sight_list
+          li.sight__list-item
+            a(href="#0")
+              span.sight__tag= '$' + item.price
+              img(src='img/' + item.src, alt="Photos of beautiful places from all over Europe").sight__img-small
+
+      img(src="img/eiffel.jpg" alt="Photo of the Eiffel Tower").sight__img-big
+
+    //- EXPLORE section
+    section.section.explore
+      .explore__block
+        .section__name Promotion
+        h2.section__title.title-decor_02 Explore Nature
+        button(type="button").btn.btn_transparent View Packages
+      .explore__block
+        .section__name Promotion
+        h2.section__title.title-decor_03 Explore Cities
+        button(type="button").btn.btn_transparent View Packages
+
+    //- TRENDING section
+    -
+      const trending_list = [
+        {url: '#0', img: 'trending_01.png', icon: 'europe', duration: '6', people_count: '25', title: 'Switzerland', country: 'Europe', discount: '1000', price: '1200', text: 'Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.'},
+        {url: '#0', img: 'trending_02.png', icon: 'brazil', duration: '12', people_count: '30', title: 'Amazon', country: 'Brazil', discount: '1223', price: '1300', text: 'Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.'},
+        {url: '#0', img: 'trending_03.png', icon: 'egypt', duration: '8', people_count: '155', title: 'Giza', country: 'Egypt', discount: '1200', price: '1450', text: 'Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos.'}
+      ];
+
+    section.section.trending
+      .section__name.text-center Trendy
+      .section__title.text-center Our trending tour packages
+
+      ul.trending__card-list
+        each item in trending_list
+          li
+            a(href=item.url).trending__card
+              .trending__img-holder
+                img(src="img/" + item.img, alt="Photos from travels").trending__img
+                div(class='country-icon country-icon_' + item.icon)
+
+              ul.trending__info
+                li #[div.icon_t01] #{item.duration} Days
+                li #[div.icon_t02] #{item.people_count} People going
+
+              .trending__title-holder
+                h3.trending__title= item.title
+                .trending__rating.icon_stars
+
+              ul.trending__info
+               li #[div.icon_t03] #{item.country}
+              .trending__price-holder
+                span.trending__discount= item.discount + ' $'
+                span.trending__price= item.price + ' $'
+
+              article
+                p.trending__text= item.text
+
+              button(type='button').btn.btn_default Explore now
+
+
+    //- CLIENTS section
+    include components/clients-section/clients

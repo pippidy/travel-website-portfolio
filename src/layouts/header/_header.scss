@@ -1,0 +1,133 @@
+// HEADER
+.header {
+    position: relative;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 65px;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    overflow: hidden;
+
+    &_main {
+        background-image: url('./img/header_main.jpg');
+    }
+
+    &__inner {
+        display: grid;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    &__top {
+        display: grid;
+        grid-template-columns: 20% auto max-content;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 230px;
+        align-content: start;
+    }
+
+    &__bottom {
+        max-width: 845px;
+    }
+
+    &__title {
+        max-width: 700px;
+        margin-bottom: 45px;
+        font-family: $font-family-main;
+        font-size: 5.8rem;
+        font-weight: bold;
+        line-height: 116%;
+    }
+
+    & .icon-wave {
+        margin-bottom: 15px;
+    }
+
+    &__build {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15%;
+        padding: 23px 27px;
+        margin-bottom: 30px;
+        color: #fff;
+        font-size: clamp(1.8rem, 1.6667rem + 0.2778vw, 2rem);
+        background-color: #f3f3f399;
+        border-radius: 5px;
+        backdrop-filter: blur(17px);
+    }
+
+    &__people {
+        display: flex;
+        gap: 14px;
+    }
+
+    &__scroll {
+        position: absolute;
+        left: 20px;
+        bottom: -195px;
+        width: 390px;
+        aspect-ratio: 1 / 1;
+        border: 1px dashed #fff;
+        border-radius: 50%;
+
+        &-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            aspect-ratio: inherit;
+            padding-top: 30px;
+            border: inherit;
+            border-radius: inherit;
+            font-size: 1.8rem;
+            font-weight: 300;
+            text-align: center;
+            cursor: default;
+        }
+    }
+}
+
+// PEOPLE LIST
+.people-list {
+    display: flex;
+
+    &>li {
+        margin-left: -12px;
+    }
+
+    &>li:first-child {
+        margin-left: 0;
+    }
+
+    &__item {
+        width: 39px;
+        aspect-ratio: 1 / 1;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__text {
+        display: inline-block;
+        font-size: 1.2rem;
+        line-height: 300%;
+    }
+
+    &__button {
+        background-color: $clr-accent;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        &__scroll {
+            left: 50%;
+            bottom: -215px;
+            transform: translateX(-50%);
+        }
+    }
+}

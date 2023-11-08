@@ -1,0 +1,13 @@
+.partners {
+    padding-block: max(40px, 3.5vw);
+    background-color: #f7f7f7;
+
+    &__list {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__item {
+        height: max(30px, 2.5vw);
+    }
+}

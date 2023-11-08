@@ -1,0 +1,93 @@
+.icon {
+    &_i01 {
+        width: 47px;
+        height: 47px;
+        background: url('../../svg/icons/i01.svg') no-repeat;
+    }
+
+    &_i02 {
+        width: 47px;
+        height: 47px;
+        background: url('../../svg/icons/i02.svg') no-repeat;
+    }
+
+    &_i03 {
+        width: 47px;
+        height: 47px;
+        background: url('../../svg/icons/i03.svg') no-repeat;
+    }
+
+    &_t01 {
+        width: 24px;
+        aspect-ratio: 1 / 1;
+        background: url('../../svg/icons/t01.svg') no-repeat;
+    }
+
+    &_t02 {
+        width: 20px;
+        aspect-ratio: 1 / 1;
+        background: url('../../svg/icons/t02.svg') no-repeat;
+    }
+
+    &_t03 {
+        width: 27px;
+        aspect-ratio: 1 / 1;
+        background: url('../../svg/icons/t03.svg') no-repeat;
+    }
+
+    &_stars {
+        width: 16px;
+        /* Don't use aspect-ratio here. Otherwise rating in Trending Section will be broken */
+        height: 16px;
+        background: url('../../svg/icons/star.svg') space 0 0;
+    }
+
+    &_wave {
+        width: 78px;
+        height: 17px;
+        background: url('../../svg/icons/wave.svg') no-repeat;
+    }
+}
+
+.country-icon {
+    width: 76px;
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+
+    &_europe {
+        background-image: url('img/countries/europe.png');
+    }
+
+    &_brazil {
+        background-image: url('img/countries/brazil.png');
+    }
+
+    &_egypt {
+        background-image: url('img/countries/egypt.png');
+    }
+}
+
+.icon-social {
+    display: block;
+    width: 20px;
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+
+    &_linkedin {
+        background-image: url('svg/socials/linkedin.svg');
+    }
+
+    &_messenger {
+        background-image: url('svg/socials/messenger.svg');
+    }
+
+    &_twitter {
+        background-image: url('svg/socials/twitter.svg');
+    }
+
+    &_twoo {
+        background-image: url('svg/socials/twoo.svg');
+    }
+}

@@ -1,0 +1,542 @@
+// math functions
+@use 'sass:math';
+
+// variables & functions
+@import './src/vars';
+
+// fonts
+@import './src/fonts/fonts';
+
+// reset & base styles
+@import './src/base';
+
+// layouts
+@import './src/layouts/header/header';
+@import './src/layouts/footer/footer';
+
+// components
+@import './src/components/buttons/buttons';
+@import './src/components/icons/icons';
+@import './src/components/menu-main/menu-main';
+@import './src/components/partners/partners';
+@import './src/components/services/services';
+@import './src/components/clients-section/clients';
+
+.page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1920px;
+    min-width: 375px;
+    min-height: 100vh;
+    margin: 0 auto;
+    font-family: $font-family-main;
+    font-size: 1.6rem;
+    background-color: #fff;
+}
+
+.logo-main {
+    position: relative;
+    font-family: $font-family-accent;
+    font-size: 31px;
+    font-weight: bold;
+    cursor: default;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 30px;
+        left: 31px;
+        display: block;
+        width: 95px;
+        height: 23px;
+        background-image: url('./svg/arrow_logo.svg');
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-bleak {
+    color: #5E6282;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.title-decor {
+    &_01 {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 97%;
+            right: 10%;
+            width: 312px;
+            height: 41px;
+            background: url('../../svg/icons/title_decor_01.svg') no-repeat;
+        }
+    }
+
+    &_02 {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 85%;
+            right: -8%;
+            width: 187px;
+            height: 19px;
+            background: url('../../svg/icons/title_decor_02.svg') no-repeat;
+        }
+    }
+
+    &_03 {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 85%;
+            right: -16%;
+            width: 212px;
+            height: 21px;
+            background: url('../../svg/icons/title_decor_03.svg') no-repeat;
+        }
+    }
+}
+
+// SECTIONS
+.section {
+    padding: 110px 40px;
+
+    &__name {
+        margin-bottom: 5px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: $clr-accent;
+        text-transform: uppercase;
+        letter-spacing: 1.8px;
+    }
+
+    &__title {
+        position: relative;
+        margin-bottom: 50px;
+        font-family: $font-family-accent;
+        font-size: 5rem;
+        font-weight: bold;
+        color: #181E4B;
+        text-transform: capitalize;
+    }
+}
+
+// ROMANTIC section
+.romantic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5%;
+    margin: 0 auto;
+
+    &__img {
+        justify-self: end;
+        width: 100%;
+        max-width: 774px;
+    }
+
+    &__article {
+        justify-self: start;
+        text-align: left;
+        max-width: 600px;
+    }
+
+    & .section__name {
+        font-size: clamp(1.5rem, 1.3rem + 0.3vw, 1.8rem);
+    }
+
+    & .section__title {
+        margin-bottom: 20px;
+        font-size: clamp(3rem, 1.6667rem + 1.5vw, 5rem);
+    }
+
+    &__text {
+        margin-bottom: 30px;
+        font-size: clamp(1.5rem, 1.4333rem + 0.1389vw, 1.6rem);
+    }
+}
+
+// RESORT section
+.resort {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 11%;
+    max-width: 1450px;
+    margin: 0 auto;
+
+    & .section__name {
+        text-transform: capitalize;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__article {
+        max-width: 460px;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+    }
+
+    &__subtitle {
+        margin-bottom: 4px;
+        font-weight: bold;
+        color: $clr-bleak;
+        text-transform: capitalize;
+    }
+
+    &__text {
+        color: $clr-bleak;
+        line-height: 124.5%;
+    }
+}
+
+// AMAZING section
+.amazing {
+    padding-block: 135px;
+    background-image: url('img/amazing.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+    & .section__title {
+        max-width: 560px;
+        margin-bottom: 0;
+        margin-left: 25%;
+        color: #fff;
+    }
+}
+
+// SIGHTSEEING section
+.sight {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 80px;
+    max-width: 1550px;
+    margin: 0 auto;
+
+    & .section__name {
+        font-size: clamp(1.5rem, 1.3rem + .3vw, 1.8rem);
+    }
+
+    & .section__title {
+        margin-bottom: 20px;
+        font-size: clamp(3rem, 1.6667rem + 1.5vw, 5rem);
+    }
+
+    &__article {
+        max-width: 650px;
+    }
+
+    &__text {
+        padding-right: 65px;
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        display: flex;
+        gap: 55px;
+
+        &-item {
+            position: relative;
+            flex-basis: 230px;
+        }
+
+        &-item:hover .sight__tag {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+    }
+
+    &__tag {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        padding: 5px 20px;
+        font-size: clamp(1.1rem, 0.7667rem + 0.5vw, 1.6rem);
+        font-weight: lighter;
+        color: #fff;
+        background: linear-gradient(100deg, #FF7255 8.93%, #BA4E38 100%);
+        border-radius: 45px;
+    }
+
+    &__img-small {
+        width: 100%;
+    }
+
+    &__img-big {
+        grid-column: 2 / -1;
+        grid-row: 1 / -1;
+        align-self: center;
+        width: min(575px, 100%);
+    }
+}
+
+//- EXPLORE section
+.explore {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    min-height: 400px;
+    padding: 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        background-color: #2e2e2e;
+        opacity: .38;
+    }
+
+    & .section__name,
+    & .section__title,
+    & .btn {
+        color: #fff;
+        z-index: 1;
+    }
+
+    & .section__name {
+        margin-bottom: 0;
+        font-size: clamp(1.5rem, 1.3rem + .3vw, 1.8rem);
+    }
+
+    & .section__title {
+        margin-bottom: 25px;
+        font-size: clamp(4rem, 3.3rem + 1vw, 5rem);
+    }
+
+    & .btn {
+        font-size: clamp(1.4rem, 1.2rem + 0.3vw, 1.7rem);
+    }
+
+    &__block {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+
+        &:first-child {
+            background-image: url('img/explore_01.jpg');
+        }
+
+        &:last-child {
+            background-image: url('img/explore_02.jpg');
+        }
+    }
+}
+
+//- TRENDING section
+.trending {
+    font-size: 1.68rem;
+    color: #7D7D7D;
+
+    &__card-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(150px, 392px));
+        justify-content: center;
+        gap: 6%;
+    }
+
+    &__card {
+        display: block;
+
+        &:hover .btn {
+            text-decoration: underline;
+        }
+    }
+
+    & .section__title {
+        max-width: 640px;
+        margin-inline: auto;
+    }
+
+    &__img-holder {
+        position: relative;
+        display: flex;
+        margin-bottom: 40px;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    & .country-icon {
+        position: absolute;
+        bottom: 0;
+        left: 7.655%;
+        width: clamp(40px, 20%, 76px);
+        box-shadow: 6px 14px 27px 0px rgba(0, 0, 0, 0.15);
+        transform: translateY(50%);
+    }
+
+    &__info {
+        display: flex;
+        gap: 35px;
+        text-transform: capitalize;
+
+        & li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+
+    &__title-holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-block: 5px;
+    }
+
+    &__title {
+        font-size: 2.9rem;
+        font-weight: bold;
+        color: #2F2F2F;
+        text-transform: capitalize;
+    }
+
+    &__rating.icon_stars {
+        width: 92px;
+    }
+
+    &__country-holder {
+        display: flex;
+        gap: 5px;
+    }
+
+    &__price-holder {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-block: 5px;
+    }
+
+    &__discount {
+        font-size: 2.9rem;
+        color: $clr-accent;
+    }
+
+    &__price {
+        font-size: 2.2rem;
+        color: #7d7d7d;
+        text-decoration: line-through;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+        font-size: 1.22rem;
+        line-height: 200%;
+        color: #000;
+    }
+
+    & .btn {
+        font-size: 1.27rem;
+    }
+}
+
+@media (max-width: 1650px) {
+    .resort {
+        grid-template-columns: auto;
+        gap: 40px;
+
+        &__article {
+            max-width: 760px;
+        }
+
+        & .section__title,
+        & .section__name {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 1115px) {
+    .amazing {
+        & .section__title {
+            margin: 0 auto;
+        }
+    }
+
+    .sight {
+        grid-template-rows: auto;
+
+        &__list {
+            gap: 30px;
+        }
+
+        &__tag {
+            top: 7px;
+            right: 12px;
+            padding: 3px 15px;
+        }
+    }
+
+    .trending {
+        &__card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__info {
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        &__title-holder {
+            flex-direction: column;
+            margin-block: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .trending {
+        &__card-list {
+            gap: 4%;
+        }
+    }
+
+    .clients {
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
+}

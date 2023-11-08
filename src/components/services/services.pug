@@ -1,0 +1,14 @@
+-
+    const services_list = [
+        {src: 'service_01.svg', alt: "Picture of a tour guide", title: 'Guided tours', text: 'sunt qui repellat saepe quo velit aperiam id aliquam placeat.'},
+        {src: 'service_02.svg', alt: "Picture of a plane", title: 'Best flights options', text: 'sunt qui repellat saepe quo velit aperiam id aliquam placeat.'},
+        {src: 'service_03.svg', alt: "Picture of a pair of praying hands", title: 'Religious tours', text: 'sunt qui repellat saepe quo velit aperiam id aliquam placeat.'},
+        {src: 'service_04.svg', alt: "Picture of medical personnel", title: 'Medical insurance', text: 'sunt qui repellat saepe quo velit aperiam id aliquam placeat.'}
+    ];
+
+ul.services__list
+    each item in services_list
+        li.services__item
+            img(src='../../svg/services/' + item.src, alt=item.alt).services__img
+            h3.services__title= item.title
+            p.services__text= item.text

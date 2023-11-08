@@ -1,0 +1,14 @@
+-
+    const partners_list = [
+        {src: 'fly-emirates.svg', name: 'Fly Emirates'},
+        {src: 'trivago.svg', name: 'Trivago'},
+        {src: 'airbnb.svg', name: 'Airbnb'},
+        {src: 'turkish-airlines.svg', name: 'Turkish Airlines'},
+        {src: 'swiss.svg', name: 'Swiss'}
+    ]
+
+.partners
+    ul.partners__list
+        each item in partners_list
+            li
+                img(src="../svg/partners/" + item.src, alt=item.name + " logo").partners__item

@@ -1,0 +1,39 @@
+include ../../components/menu-main/menu-main
+
+header.header.header_main
+    .header__inner
+        .header__top
+            a.logo-main Travel
+            nav
+                ul.main-menu
+                    +mainMenu
+            .header__contacts
+                button(type="button").btn.btn_default#get-in-touch Get in Touch
+        .header__bottom
+            .icon_wave
+            h1.header__title No matter where you’re going to, we’ll take you there
+            .header__build
+                p Build your own traveling package with us!
+                button(type="button").btn.btn_default#build-package Build your Package
+            .header__people
+
+                -
+                    const people_list = [
+                        {url: '#0', src: 'p_01.jpg'},
+                        {url: '#0', src: 'p_02.jpg'},
+                        {url: '#0', src: 'p_03.jpg'},
+                        {url: '#0', src: 'p_04.jpg'},
+                        {url: '#0', src: 'p_05.jpg'},
+                        {url: '#0', src: 'p_06.jpg'}
+                    ];
+
+                ul.people-list
+                    each item in people_list
+                        li
+                            a(href=item.url)
+                                img(src="../../img/people/" + item.src).people-list__item
+                    li
+                        button.people-list__item.people-list__button +
+                p.people-list__text 2,500 people booked Tommorowland Event in last 24 hours
+    .header__scroll
+        .header__scroll-inner Scroll

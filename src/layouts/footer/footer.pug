@@ -1,0 +1,62 @@
+footer.footer
+    .footer__inner
+        .footer__logo-holder
+            a.logo-main Travel
+            p.footer__logo-text Travel helps companies manage payments easily.
+
+            -
+                const social_links = [
+                    {url: 'https://www.linkedin.com/', icon: 'linkedin'},
+                    {url: 'https://www.messenger.com/', icon: 'messenger'},
+                    {url: 'https://twitter.com/', icon: 'twitter'},
+                    {url: 'https://www.twoo.com/', icon: 'twoo'}
+                ];
+
+            nav
+                ul.social-links
+                    each item in social_links
+                        li
+                            a(href=item.url, target='_blank', class='icon-social icon-social_' + item.icon)
+
+        .footer__nav
+            h3.footer__subtitle Company
+
+            -
+                const company_nav = [
+                    {url: '#0', name: 'About us'},
+                    {url: '#0', name: 'Careers'},
+                    {url: '#0', name: 'Blog'},
+                    {url: '#0', name: 'Pricing'}
+                ];
+
+            nav
+                ul.footer__nav-list
+                    each item in company_nav
+                        li
+                            a(href=item.url).footer__nav-list-item= item.name
+
+        .footer__nav
+            h3.footer__subtitle Destinations
+
+            -
+                const destinations_nav = [
+                    {url: '#0', name: 'Maldives'},
+                    {url: '#0', name: 'Los Angeles'},
+                    {url: '#0', name: 'Las Vegas'},
+                    {url: '#0', name: 'Torronto'}
+                ];
+
+            nav
+                ul.footer__nav-list
+                    each item in destinations_nav
+                        li
+                            a(href=item.url).footer__nav-list-item= item.name
+
+        .newsletter
+            h3.footer__subtitle Join our newsletter
+            form(action="submit").newsletter__form
+                input(type="text", placeholder="Your email address").newsletter__input
+                button(type="submit").btn.btn_default Subscribe
+                label.newsletter__label *  Will send you weekly updates for your better tour packages.
+
+    .footer__copyright Copyright @ Xpro 2022. All Rights Reserved.
